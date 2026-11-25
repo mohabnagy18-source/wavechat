@@ -51,9 +51,10 @@ const HUB='https://wavechatmn.runasp.net/hub/chat';
 const $=id=>document.getElementById(id);
 let conn,me,room='general';
 function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML}
+function fmt(s){const d=new Date(s);return isNaN(d)?new Date(s+'Z'):d}
 function addMsg(m,mine){
   const d=document.createElement('div');d.className='msg'+(mine?' mine':'');
-  d.innerHTML=`<div class="who">${esc(m.username)}</div>${esc(m.text)}<div class="when">${new Date(m.sentAt+'Z').toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}</div>`;
+  d.innerHTML=`<div class="who">${esc(m.username)}</div>${esc(m.text)}<div class="when">${fmt(m.sentAt).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}</div>`;
   $('msgs').appendChild(d);$('msgs').scrollTop=1e9;
 }
 function addSys(t){const d=document.createElement('div');d.className='sys';d.textContent=t;$('msgs').appendChild(d)}
