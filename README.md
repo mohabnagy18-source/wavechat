@@ -5,7 +5,8 @@ Multi-room real-time chat built on ASP.NET Core 8 SignalR with SQL Server messag
 ## Live
 - API: https://wavechatmn.runasp.net/api/rooms
 - Hub: wss://wavechatmn.runasp.net/hub/chat
-- Frontend: (Vercel link in project description)
+- Frontend: https://wavechat-taupe.vercel.app
+- API: https://wavechatmn.runasp.net
 
 ## Features
 - Rooms, live messages over WebSockets (SignalR), persisted history (last 50 on join)
